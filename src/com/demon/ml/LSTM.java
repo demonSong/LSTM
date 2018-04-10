@@ -52,7 +52,7 @@ public class LSTM {
 		return loss;
 	}
 	
-	public void x_list_add(double[] x) { // 一个样例的数据？
+	public void x_list_add(double[] x) {
 		x_list.add(x);
 		if (x_list.size() > lstm_node_list.size()) {
 			LSTMState state = new LSTMState(this.mem_cell_cnt, this.x_dim);
@@ -289,7 +289,7 @@ class ToyLossLayer{
 	 * compute square loss with first element of hidden layer array
 	 */
 	
-	public double loss(double[] pred, double label) { // 第一个记忆单元的输出？
+	public double loss(double[] pred, double label) {
 		return (pred[0] - label) * (pred[0] - label);
 	}
 	
